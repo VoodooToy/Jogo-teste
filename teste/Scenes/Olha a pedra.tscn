@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://duq1dbyerdktb"]
+
+[ext_resource type="Texture2D" uid="uid://b0mn4tu2pb7mt" path="res://Assets/sprites/world_tileset.png" id="1_ms1lh"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=427063350]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1632209190]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ms1lh")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://de6n27lu6t1gf"]
+
+[ext_resource type="Script" uid="uid://cnrn2gl6cvla0" path="res://Scenes/interface_texto.gd" id="1_yi4xh"]
+[ext_resource type="FontFile" uid="uid://de4j4tuxsfm5c" path="res://Assets/fonts/PixelOperator8.ttf" id="2_1xjup"]
+
+[node name="InterfaceTexto" type="Control" unique_id=1373587225]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yi4xh")
+
+[node name="Panel" type="Panel" parent="." unique_id=1706608160]
+layout_mode = 0
+offset_right = 137.0
+offset_bottom = 15.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1591050130]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 136.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_1xjup")
+theme_override_font_sizes/font_size = 8
+text = "Olá, eu sou uma placa!"

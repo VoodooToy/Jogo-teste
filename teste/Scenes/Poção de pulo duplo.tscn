@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bao5b0mlku86l"]
+
+[ext_resource type="Script" uid="uid://cuo84ytcr7h1u" path="res://area_2d.gd" id="1_ico5u"]
+[ext_resource type="Texture2D" uid="uid://b0mn4tu2pb7mt" path="res://Assets/sprites/world_tileset.png" id="2_1s85r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0dq5"]
+size = Vector2(6, 12)
+
+[node name="Poção de pulo duplo" type="Area2D" unique_id=732841470]
+collision_mask = 2
+script = ExtResource("1_ico5u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242993699]
+texture = ExtResource("2_1s85r")
+region_enabled = true
+region_rect = Rect2(4, 114, 8, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1310731451]
+shape = SubResource("RectangleShape2D_r0dq5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
