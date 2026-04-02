@@ -23,6 +23,10 @@ buses/default_bus_layout="uid://c0b7atwtc8kah"
 
 Music="*uid://btmex5w1m0rt6"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 Jump={

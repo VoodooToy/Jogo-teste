@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c2l82knb6vic6"]
+
+[ext_resource type="Script" uid="uid://cvmxgtq6hdwpi" path="res://Scripts/Placa.gd" id="1_7ta0k"]
+[ext_resource type="Texture2D" uid="uid://b0mn4tu2pb7mt" path="res://Assets/sprites/world_tileset.png" id="2_t4ou4"]
+[ext_resource type="PackedScene" uid="uid://n28vbrkrxflf" path="res://Scenes/InterfaceTexto.tscn" id="3_dorta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78327"]
+size = Vector2(14, 14)
+
+[node name="Placa" type="Area2D" unique_id=1779924230]
+collision_mask = 2
+script = ExtResource("1_7ta0k")
+meu_texto = "Olá! Eu sou uma placa."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=335876057]
+position = Vector2(0, -7)
+texture = ExtResource("2_t4ou4")
+region_enabled = true
+region_rect = Rect2(129, 50, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1877501121]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_78327")
+
+[node name="InterfaceTexto" parent="." unique_id=639114730 instance=ExtResource("3_dorta")]
+offset_left = -1.0
+offset_top = -38.0
+offset_right = -1.0
+offset_bottom = -38.0
+scale = Vector2(0.5, 0.5)

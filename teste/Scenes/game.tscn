@@ -12,8 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://duq1dbyerdktb" path="res://Scenes/Olha a pedra.tscn" id="10_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://bao5b0mlku86l" path="res://Scenes/Poção de pulo duplo.tscn" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://wtwxfw6dw1j1" path="res://Scenes/red_slime.tscn" id="12_rku1e"]
-[ext_resource type="PackedScene" uid="uid://djv60l3w6oxps" path="res://Scenes/Sign.tscn" id="13_rfjv2"]
-[ext_resource type="PackedScene" uid="uid://de6n27lu6t1gf" path="res://Scenes/interface_texto.tscn" id="14_1phco"]
+[ext_resource type="PackedScene" uid="uid://c2l82knb6vic6" path="res://Scenes/Placa.tscn" id="13_rfjv2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v158k"]
 texture = ExtResource("2_qxrlw")
@@ -843,12 +842,13 @@ position = Vector2(87, -182)
 [node name="Red Slime" parent="." unique_id=1140635832 instance=ExtResource("12_rku1e")]
 position = Vector2(-239, -239)
 
-[node name="Sign" parent="." unique_id=353216023 instance=ExtResource("13_rfjv2")]
-position = Vector2(-90, -259)
+[node name="Placas" type="Node" parent="." unique_id=838161605]
 
-[node name="InterfaceTexto" parent="." unique_id=1373587225 instance=ExtResource("14_1phco")]
-offset_left = -123.0
-offset_top = -294.0
-offset_right = -123.0
-offset_bottom = -294.0
-scale = Vector2(0.5526716, 0.5526716)
+[node name="Placa" parent="Placas" unique_id=1779924230 instance=ExtResource("13_rfjv2")]
+position = Vector2(-91, -255)
+
+[node name="Placa2" parent="Placas" unique_id=1779908494 instance=ExtResource("13_rfjv2")]
+position = Vector2(71, -223)
+meu_texto = "Você já se perguntou quanto tempo demora para criar uma placa dessas?
+
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://n28vbrkrxflf"]
+
+[ext_resource type="Script" uid="uid://dejoek7xpgdck" path="res://Scripts/panel_container.gd" id="1_vqh1f"]
+[ext_resource type="FontFile" uid="uid://de4j4tuxsfm5c" path="res://Assets/fonts/PixelOperator8.ttf" id="2_e7d3r"]
+
+[node name="InterfaceTexto" type="Control" unique_id=639114730]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = -666.0
+offset_right = -569.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+script = ExtResource("1_vqh1f")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1801528812]
+layout_mode = 0
+offset_right = 11.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1514903548]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=889337425]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e7d3r")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
