@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bepoplpyent8r"]
+
+[ext_resource type="Texture2D" uid="uid://cxsf8e7u11l3l" path="res://Assets/sprites/ui_upscaled_under.png" id="1_ulweo"]
+[ext_resource type="Texture2D" uid="uid://q4hweb08n8jo" path="res://Assets/sprites/ui_upscaled_health full.jpg" id="2_ulweo"]
+[ext_resource type="Script" uid="uid://c5wybobyyap36" path="res://Scripts/Progresso barra de vida.gd" id="3_yigkf"]
+
+[node name="Vida, Mana e XP" type="CanvasLayer" unique_id=390673252]
+
+[node name="Control" type="Control" parent="." unique_id=2053612514]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1534215194]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ulweo")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=1945791934]
+layout_mode = 1
+offset_left = -1.0
+offset_right = 101.0
+offset_bottom = 8.0
+value = 100.0
+stretch_margin_right = 10
+texture_progress = ExtResource("2_ulweo")
+texture_progress_offset = Vector2(73, 8)
+script = ExtResource("3_yigkf")

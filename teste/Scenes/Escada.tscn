@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bvrpjonqac24v"]
+
+[ext_resource type="Script" uid="uid://b1prhqdlyrmoa" path="res://Scripts/escada.gd" id="1_fe1et"]
+[ext_resource type="Texture2D" uid="uid://b0mn4tu2pb7mt" path="res://Assets/sprites/world_tileset.png" id="1_vwr24"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe1et"]
+size = Vector2(14, 12)
+
+[node name="Escada" type="Area2D" unique_id=2139788005 groups=["escada"]]
+collision_mask = 2
+script = ExtResource("1_fe1et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353379821]
+shape = SubResource("RectangleShape2D_fe1et")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1115064341]
+texture = ExtResource("1_vwr24")
+region_enabled = true
+region_rect = Rect2(145, 52, 14, 12)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
