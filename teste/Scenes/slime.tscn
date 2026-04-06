@@ -1,8 +1,41 @@
 [gd_scene format=3 uid="uid://cqw0o4oulroik"]
 
-[ext_resource type="Script" uid="uid://dnoawron6xydc" path="res://Scenes/slime.gd" id="1_aiwxb"]
+[ext_resource type="Script" uid="uid://fj1aigcpbylf" path="res://Scripts/slime.gd" id="1_aiwxb"]
 [ext_resource type="Texture2D" uid="uid://cwwpr301jtn77" path="res://Assets/sprites/slime_green.png" id="1_swwnm"]
 [ext_resource type="PackedScene" uid="uid://xviiqgk5a0we" path="res://Scenes/killzone.tscn" id="2_aiwxb"]
+[ext_resource type="Script" uid="uid://dar2xy04ftobs" path="res://Scripts/killzone.gd" id="4_paq7w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiwxb"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e388w"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4o34"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y26kt"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7ij5"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psnrq"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh8cv"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_555id"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_paq7w"]
 atlas = ExtResource("1_swwnm")
@@ -24,6 +57,40 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_aiwxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e388w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4o34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y26kt")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7ij5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psnrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh8cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_555id")
+}],
+"loop": true,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_paq7w")
 }, {
 "duration": 1.0,
@@ -40,29 +107,37 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4o34"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiwxb"]
 size = Vector2(12, 13)
 
-[node name="Slime" type="Node2D" unique_id=329222634]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4o34"]
+size = Vector2(14, 14.25)
+
+[node name="Slime" type="CharacterBody2D" unique_id=1029374875 groups=["Inimigos"]]
+collision_layer = 8
 script = ExtResource("1_aiwxb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1047535722]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_e388w")
+animation = &"death"
 autoplay = "default"
-frame_progress = 0.03580584
+speed_scale = 0.5
 
-[node name="Killzone" parent="." unique_id=493361542 instance=ExtResource("2_aiwxb")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=608070453]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_aiwxb")
+
+[node name="Killzone" parent="." unique_id=493361542 groups=["Inimigos"] instance=ExtResource("2_aiwxb")]
 position = Vector2(0, -12)
+collision_layer = 4
+script = ExtResource("4_paq7w")
+dano = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1063602808]
-position = Vector2(0, 5.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1063602808 groups=["Inimigos"]]
+position = Vector2(0, 5.125)
 shape = SubResource("RectangleShape2D_r4o34")
 
-[node name="RayCastR" type="RayCast2D" parent="." unique_id=53122319]
+[node name="FloorCheck" type="RayCast2D" parent="." unique_id=53122319]
 position = Vector2(0, -7)
-target_position = Vector2(7, 1)
-
-[node name="RayCastL" type="RayCast2D" parent="." unique_id=876014674]
-position = Vector2(0, -7)
-target_position = Vector2(-7, 0)
+target_position = Vector2(10, 20)

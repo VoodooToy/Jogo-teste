@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://crdblx0fkkse5"]
+
+[ext_resource type="Texture2D" uid="uid://b0mn4tu2pb7mt" path="res://Assets/sprites/world_tileset.png" id="1_k86kc"]
+[ext_resource type="Script" uid="uid://ih5als3mme23" path="res://Scripts/poção_de_cura.gd" id="1_ojngj"]
+[ext_resource type="AudioStream" uid="uid://fdtp31hoclds" path="res://Assets/sounds/Rise02.wav" id="3_je431"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojngj"]
+size = Vector2(6, 12)
+
+[node name="Poção de cura" type="Area2D" unique_id=2004716698]
+collision_mask = 2
+script = ExtResource("1_ojngj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=995635501]
+texture = ExtResource("1_k86kc")
+region_enabled = true
+region_rect = Rect2(4, 114, 8, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=66401636]
+shape = SubResource("RectangleShape2D_ojngj")
+
+[node name="Som de cura" type="AudioStreamPlayer2D" parent="." unique_id=559766829]
+stream = ExtResource("3_je431")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

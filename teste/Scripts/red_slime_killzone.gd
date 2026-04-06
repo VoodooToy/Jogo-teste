@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var dano: int = 10
+@export var dano: int = 30
 @export var intervalo_dano: float = 0.5
 
 var pode_dar_dano = true
@@ -18,10 +18,10 @@ func _process(delta):
 		if body.name == "Player":
 			if body.has_method("tomar_dano"):
 				body.tomar_dano(dano, global_position)
-				print("SLIME ATACOU:", dano)
+				print("RED SLIME ATACOU:", dano)
 				iniciar_cooldown()
 				break
-	
+
 
 func iniciar_cooldown():
 	pode_dar_dano = false
